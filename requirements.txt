@@ -4,3 +4,4 @@ psycopg2
 flask
 scikit-learn
 gunicorn
+flask_cors
