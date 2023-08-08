@@ -21,7 +21,8 @@ import pandas as pd
 
 # Establish a connection to the database
 db_url = os.getenv(
-    'DATABASE_URL', 'postgres://postgres:postgres@localhost:5432/homeheart_database')
+    'DATABASE_URL', 'postgresql://postgres:postgres@localhost:5432/homeheart_database')
+# db_url = 'postgresql://postgres:postgres@localhost:5432/homeheart_database'
 engine = create_engine(
     db_url)
 
