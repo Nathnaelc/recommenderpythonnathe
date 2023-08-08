@@ -1,5 +1,7 @@
 sqlalchemy
 pandas
 psycopg2
+pickle
 flask
 scikit-learn
+gunicorn
