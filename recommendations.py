@@ -11,7 +11,7 @@
 
 
 # #### Data reading directly from postgres database server
-
+import os
 from flask import Flask, request, jsonify
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
@@ -20,8 +20,10 @@ from sqlalchemy import create_engine
 import pandas as pd
 
 # Establish a connection to the database
+db_url = os.getenv(
+    'DATABASE_URL', 'postgres://postgres:postgres@localhost:5432/homeheart_database')
 engine = create_engine(
-    'postgresql://postgres:postgres@localhost:5432/homeheart_database')
+    db_url)
 
 # Query the database directly and load data into a pandas DataFrame
 users = pd.read_sql_table('users', engine)
