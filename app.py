@@ -14,9 +14,9 @@ def home():
 
 @app.route('/recommendations', methods=['GET'])
 def recommendations():
-    user_id = request.args.get('user_id')
-    recommendations = get_recommendations(int(user_id))
-    return jsonify(recommendations.tolist())
+    user_id = request.args.get('user_id', type=int)
+    recommended_professionals = get_recommendations(user_id)
+    return jsonify(recommended_professionals.tolist())
 
 
 @app.after_request
